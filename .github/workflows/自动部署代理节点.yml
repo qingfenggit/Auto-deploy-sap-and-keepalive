@@ -270,10 +270,10 @@ jobs:
         cf set-env ${{ env.APP_NAME }} NEZHA_SERVER "${{ secrets.NEZHA_SERVER }}"
         cf set-env ${{ env.APP_NAME }} NEZHA_PORT "${{ secrets.NEZHA_PORT }}"
         cf set-env ${{ env.APP_NAME }} NEZHA_KEY "${{ secrets.NEZHA_KEY }}"
-        if [ "${{ github.event.inputs.region }}" = "SG" ]; then
+        if [ "${{ github.event.inputs.region }}" = "SG(free)" ]; then
            cf set-env ${{ env.APP_NAME }} ARGO_DOMAIN "${{ secrets.SG_ARGO_DOMAIN }}"
            cf set-env ${{ env.APP_NAME }} ARGO_AUTH "${{ secrets.SG_ARGO_AUTH }}"
-        elif [ "${{ github.event.inputs.region }}" = "US" ]; then
+        elif [ "${{ github.event.inputs.region }}" = "US(free)" ]; then
            cf set-env ${{ env.APP_NAME }} ARGO_DOMAIN "${{ secrets.US_ARGO_DOMAIN }}"
            cf set-env ${{ env.APP_NAME }} ARGO_AUTH "${{ secrets.US_ARGO_AUTH }}"
         fi
